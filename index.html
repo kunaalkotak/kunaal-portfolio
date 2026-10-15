@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kunaal Kotak – Data Science undergraduate, Mumbai</title>
+<meta name="description" content="Portfolio of Kunaal Kotak, B.Tech Data Science student at NMIMS MPSTME, Mumbai. Forecasting, analytics and prediction projects.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef0f4;--ink:#141d36;--soft:#566079;--navy:#111a33;--onNavy:#f2f4f8;--acc:#2f56c9;--accOn:#a9c1e0;--hl:#e9a13b;--line:#d3d8e2;--card:#fff;--tint:rgba(47,86,201,.07);--dot:#c3cad9;--f:var(--acc);
+--h:'Bricolage Grotesque','Trebuchet MS',sans-serif;--b:'Newsreader',Georgia,serif;--r-big:clamp(1.5rem,4vw,3rem)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1526;--ink:#ebeef5;--soft:#a7b0c6;--navy:#0a0f1d;--acc:#8fb0da;--line:#27314d;--card:#171f36;--tint:rgba(143,176,218,.08);--dot:#34405f}}
+:root[data-theme="dark"]{--bg:#0f1526;--ink:#ebeef5;--soft:#a7b0c6;--navy:#0a0f1d;--acc:#8fb0da;--line:#27314d;--card:#171f36;--tint:rgba(143,176,218,.08);--dot:#34405f}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.15rem/1.65 var(--b);overflow-x:hidden;font-optical-sizing:auto}
+a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid var(--f);outline-offset:3px;border-radius:.4rem}
+.bar,.heroWrap,#contact{--f:var(--hl)}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--h);line-height:1.1;margin:0 0 .6em;text-wrap:balance}
+h2{font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.025em}h3{font-size:1.25rem}
+p{text-wrap:pretty}
+
+/* nav */
+.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--navy) 86%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);color:var(--onNavy);padding-top:env(safe-area-inset-top,0px)}
+nav{display:flex;flex-wrap:wrap;gap:.3rem 1.6rem;padding:.7rem 0;font:500 .98rem var(--h)}
+nav a{text-decoration:none;padding:.25rem 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover{color:var(--accOn)}nav a[aria-current="true"]{border-bottom-color:var(--hl)}
+nav .me{margin-right:auto;font-weight:700;border-bottom-color:transparent}
+
+/* hero */
+.heroWrap{position:relative;overflow:hidden;background:var(--navy);color:var(--onNavy);border-radius:0 0 var(--r-big) var(--r-big)}
+#net{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero{position:relative;padding:4.5rem 1.25rem 6.5rem}
+.hero .who{font:500 1.1rem var(--h);color:var(--accOn);margin:0 0 1.2rem}
+.hero h1{font-size:clamp(3rem,10vw,6.4rem);font-weight:700;letter-spacing:-.035em;margin-bottom:.3em}
+.hero .stmt{font-size:clamp(1.3rem,2.6vw,1.7rem);max-width:38rem;line-height:1.45}
+.flow{display:flex;flex-wrap:wrap;gap:.6rem 1.1rem;margin:2.2rem 0;font:500 1rem var(--h)}
+.flow span{position:relative;border:1.5px solid rgba(169,193,224,.55);background:rgba(169,193,224,.08);border-radius:999px;padding:.4rem 1.05rem}
+.flow span+span::before{content:"";position:absolute;right:100%;top:50%;width:1.1rem;height:1.5px;background:rgba(169,193,224,.4)}
+.flow span:last-child{border-color:var(--hl);background:rgba(233,161,59,.12)}
+.btn{display:inline-block;font:700 1rem var(--h);background:var(--accOn);color:#111a33;padding:.75rem 1.4rem;text-decoration:none;border:1.5px solid var(--accOn);border-radius:999px;transition:background .2s,border-color .2s,color .2s}
+.btn.ghost{background:transparent;color:inherit;border-color:rgba(169,193,224,.6);margin-left:.5rem}
+.btn:hover{background:#fff;border-color:#fff;color:#111a33}
+.btn.ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;color:#fff}
+
+/* sections */
+section{padding:5rem 0}
+.cols{display:grid;grid-template-columns:3fr 2fr;gap:3.5rem;align-items:start}
+.facts{background:var(--tint);border-radius:1.5rem;padding:1.6rem 1.7rem;font-size:1.02rem;color:var(--soft)}
+.facts p{margin:0 0 1rem}.facts p:last-child{margin:0}.facts b{font-family:var(--h);color:var(--ink);display:block}
+.now{font-size:1rem;color:var(--soft);margin-top:1.4rem}.now b{font-family:var(--h);color:var(--ink)}
+.hint{font-size:.98rem;color:var(--soft);margin:0 0 1.6rem}
+
+/* projects */
+.work{padding-top:1rem}
+.board{background:var(--card);border:1px solid var(--line);border-radius:2rem;padding:clamp(1.25rem,3.5vw,2.5rem);box-shadow:0 18px 40px -26px rgba(17,26,51,.35)}
+.tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.tabs button{font:700 1rem var(--h);padding:.55rem 1.15rem;background:transparent;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.tabs button:hover{border-color:var(--acc);color:var(--acc)}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.pname{font-size:clamp(1.6rem,3.5vw,2.4rem);letter-spacing:-.02em;animation:rise .5s both}
+.pstack{font:500 .95rem var(--h);color:var(--soft);margin:-.2rem 0 2rem;animation:rise .5s .05s both}
+.stages{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+.stage{position:relative;padding-top:1.9rem;animation:rise .55s both}
+.stage:nth-child(1){animation-delay:.1s}.stage:nth-child(2){animation-delay:.18s}.stage:nth-child(3){animation-delay:.26s}.stage:nth-child(4){animation-delay:.34s}
+.stage::before{content:"";position:absolute;left:0;top:0;width:.9rem;height:.9rem;border-radius:50%;background:var(--acc)}
+.stage::after{content:"";position:absolute;left:1.2rem;right:-1.6rem;top:.4rem;height:2px;background:var(--line)}
+.stage:last-child::before{background:var(--hl);box-shadow:0 0 0 5px rgba(233,161,59,.22)}
+.stage:last-child::after{display:none}
+.stage h4{font:700 1.05rem var(--h);margin:0 0 .5rem}
+.stage p{margin:0;font-size:1.02rem;line-height:1.5;color:var(--soft)}
+.gh{margin-top:2rem;font-size:1rem;animation:rise .5s .42s both}
+.gh a{font-family:var(--h);font-weight:700;color:var(--acc);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.3em;text-decoration-color:var(--line);transition:text-decoration-color .2s}
+.gh a:hover{text-decoration-color:var(--acc)}
+
+/* timeline */
+.small{display:grid}
+.small>div{display:grid;grid-template-columns:11rem 1fr}
+.small time{font:700 .95rem var(--h);color:var(--soft);text-align:right;padding:.3rem 2rem 0 0}
+.tl{position:relative;border-left:2px solid var(--line);padding:0 0 2.4rem 2rem;font-size:1.05rem}
+.tl::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--acc)}
+.small>div:last-child .tl{padding-bottom:0;border-image:linear-gradient(var(--line),transparent) 1}
+.tl h3{font-size:1.15rem;margin-bottom:.25rem}.tl p{margin:0}
+
+/* toolkit */
+#skills{padding-top:0}
+.skills{border-bottom:1px solid var(--line)}
+.row{display:grid;grid-template-columns:11rem 1fr;gap:.6rem 2rem;padding:1.2rem 0;border-top:1px solid var(--line);align-items:center}
+.row h3{margin:0}
+.row ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.row li{font:500 .98rem var(--h);background:var(--tint);padding:.35rem .95rem;border-radius:999px}
+
+/* contact */
+#contact{background:var(--navy);color:var(--onNavy);border-radius:var(--r-big) var(--r-big) 0 0;padding:5.5rem 0 calc(5rem + env(safe-area-inset-bottom,0px))}
+#contact p{max-width:36rem}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes lit{from{border-color:rgba(169,193,224,.18);background:transparent;color:rgba(242,244,248,.55)}}
+.hero>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero>:nth-child(2){animation-delay:.08s}.hero>:nth-child(3){animation-delay:.2s}.hero>:nth-child(4){animation-delay:.32s}.hero>:nth-child(5){animation-delay:.5s}.hero>:nth-child(6){animation-delay:.56s}
+.flow{animation:rise .8s .32s both}
+.flow span{animation:lit .6s both}
+.flow span:nth-child(1){animation-delay:.9s}.flow span:nth-child(2){animation-delay:1.25s}.flow span:nth-child(3){animation-delay:1.6s}.flow span:nth-child(4){animation-delay:1.95s}
+
+@media(max-width:760px){
+.bar{position:static}
+.cols{grid-template-columns:1fr;gap:2rem}
+section{padding:3.5rem 0}body{font-size:1.08rem}
+.hero{padding:3rem 1.25rem 4.5rem}
+.btn.ghost{margin:.6rem 0 0}
+.flow{gap:.5rem}.flow span+span::before{display:none}
+.board{border-radius:1.5rem}
+.stages{grid-template-columns:1fr;gap:1.6rem}
+.stage{padding:0 0 0 2rem}
+.stage::before{top:.35rem}
+.stage::after{left:.4rem;right:auto;top:1.3rem;bottom:-1.9rem;width:2px;height:auto}
+.small>div{grid-template-columns:1fr;border-left:2px solid var(--line);padding-left:1.6rem;position:relative;padding-bottom:2rem}
+.small>div::before{content:"";position:absolute;left:-7px;top:.35rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--acc)}
+.small>div:last-child{padding-bottom:0}
+.small time{text-align:left;padding:0 0 .2rem}
+.tl{border:0!important;padding:0!important}.tl::before{display:none}
+.row{grid-template-columns:1fr}
+#contact{padding-top:4rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="bar"><div class="wrap"><nav aria-label="Main"><a class="me" href="#top">Kunaal Kotak</a><a href="#about">About</a><a href="#work">Projects</a><a href="#journey">Along the Way</a><a href="#skills">Toolkit</a><a href="#contact">Contact</a></nav></div></header>
+<main id="top">
+<div class="heroWrap"><canvas id="net" aria-hidden="true"></canvas><div class="wrap hero">
+<p class="who">B.Tech Data Science, NMIMS MPSTME, Mumbai</p>
+<h1>Kunaal Kotak</h1>
+<p class="stmt">I learn data science by taking a real question, finding the data, building a model, and turning the answer into something a person can actually use. I’m a student, and these are the projects that taught me.</p>
+<div class="flow" aria-label="How I work"><span>A real question</span><span>The data</span><span>A model</span><span>Something usable</span></div>
+<a class="btn" href="#work">See how I built three of them</a><a class="btn ghost" href="https://github.com/kunaalkotak">GitHub</a>
+</div></div>
+
+<section id="about"><div class="wrap cols">
+<div><h2>About</h2>
+<p>I’m a Data Science undergraduate in Mumbai, graduating in 2028. My interests sit where statistics, machine learning and ordinary software meet: forecasting, prediction and analytics that end in a working app rather than only a notebook.</p>
+<p>So far that has meant a weather forecaster, a rent checker and a cricket analytics platform, plus hackathons and an AI/ML internship. Each one pushed me a bit further, from a model on its own towards a full system around it.</p>
+<p class="now"><b>Currently exploring:</b> Machine Learning · Forecasting</p></div>
+<div class="facts"><p><b>Studying</b>B.Tech Data Science, NMIMS MPSTME (up to May 2028). GPA 3.78 as of June 2026.</p><p><b>Drawn to</b>Forecasting, prediction, analytics and visualisation.</p></div>
+</div></section>
+
+<section id="work" class="work"><div class="wrap">
+<h2>Projects</h2>
+<p class="hint">Each project started with a question. Pick one to see how I went from question to something usable.</p>
+<div class="board">
+<div class="tabs" role="tablist" aria-label="Projects"></div>
+<div id="panel" role="tabpanel" tabindex="0"></div>
+</div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+<h2>Along the Way</h2>
+<div class="small">
+<div><time>March to April 2025</time><div class="tl"><h3>GDG Solution Challenge India</h3><p>Hack2Skill. I contributed to an AI-powered Smart Crop Advisory System.</p></div></div>
+<div><time>June 2025</time><div class="tl"><h3>Maasoom Night School</h3><p>Volunteered for community service in Mumbai.</p></div></div>
+<div><time>September 2025</time><div class="tl"><h3>ISTE-SF ACE 2.0 Hackathon</h3><p>I contributed to an Emotional Intelligence tracking platform. Our team placed in the top 5.</p></div></div>
+<div><time>June 2026</time><div class="tl"><h3>AI/ML intern, Devzy.ai</h3><p>Helped build a cost model for AI token usage.</p></div></div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Toolkit</h2>
+<div class="skills">
+<div class="row"><h3>Build</h3><ul><li>Python</li><li>SQL</li><li>GitHub</li><li>VS Code</li></ul></div>
+<div class="row"><h3>Analyse</h3><ul><li>Pandas</li><li>NumPy</li><li>Statsmodels</li></ul></div>
+<div class="row"><h3>Model</h3><ul><li>Scikit-learn</li><li>Linear Regression</li><li>Neural Networks</li></ul></div>
+<div class="row"><h3>Communicate</h3><ul><li>Power BI</li><li>Excel</li><li>Matplotlib</li><li>Seaborn</li><li>basic Tableau</li></ul></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2>Contact</h2>
+<p>For projects, internships or a dataset that needs a second pair of eyes, email works best. My code is on GitHub.</p>
+<a class="btn" href="mailto:kunaalkotak@gmail.com">kunaalkotak@gmail.com</a><a class="btn ghost" href="https://github.com/kunaalkotak">github.com/kunaalkotak</a>
+</div></section>
+</main>
+
+<script>
+var P=[
+{n:'Weather prediction with Markov chains',s:'Python, Pandas, NumPy, Flask',g:'https://github.com/kunaalkotak/weather',
+q:'Can weather be forecast with a model simple enough to explain on a whiteboard?',
+d:'Historical weather data, analysed with Python, Pandas and NumPy.',
+m:'A Markov chain for day-to-day transitions, with Monte Carlo simulations to forecast.',
+r:'A Flask application that shows the forecasting system through visualisations.'},
+{n:'Is your rent fair?',s:'Python, Scikit-learn, Flask',g:'https://github.com/Krishna-54/ssdi-project',
+q:'Is the rent on a lease reasonable? Most renters have no easy way to tell.',
+d:'Housing data.',
+m:'Linear Regression built with Scikit-learn, wrapped in prediction logic in Flask.',
+r:'The user gets a predicted rent value and a fairness verdict. The verdict is what makes a number usable.'},
+{n:'IPL cricket analytics and team management system',s:'PostgreSQL, FastAPI, Streamlit',g:'https://github.com/kunaalkotak/ipl-cricket-analytics',
+q:'What can ball-by-ball data from 2008 to 2024 tell us about the IPL?',
+d:'Ball-by-ball IPL data from 2008 to 2024, processed for insights and visualisations.',
+m:'A PostgreSQL database behind a FastAPI backend. Less modelling here, more systems.',
+r:'A Streamlit analytics dashboard with player search and CRUD operations: an end-to-end platform.'}];
+var L=['Weather forecasting','Is your rent fair?','IPL analytics'];
+var tabs=document.querySelector('.tabs'),panel=document.getElementById('panel');
+function show(i){
+ [].forEach.call(tabs.children,function(b,j){b.setAttribute('aria-selected',j===i);b.tabIndex=j===i?0:-1});
+ var p=P[i];
+ panel.innerHTML='<h3 class="pname">'+p.n+'</h3><p class="pstack">'+p.s+'</p><div class="stages">'+
+ [['The question',p.q],['The data',p.d],['The approach',p.m],['What people get',p.r]].map(function(x){return '<div class="stage"><h4>'+x[0]+'</h4><p>'+x[1]+'</p></div>'}).join('')+'</div>'+
+ (p.g?'<p class="gh"><a href="'+p.g+'">View the code on GitHub</a></p>':'');
+ panel.setAttribute('aria-labelledby','t'+i);
+}
+P.forEach(function(p,i){var b=document.createElement('button');b.type='button';b.id='t'+i;b.setAttribute('role','tab');b.textContent=L[i];
+ b.onclick=function(){show(i)};
+ b.onkeydown=function(e){var k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(k){var j=(i+k+P.length)%P.length;show(j);tabs.children[j].focus()}};
+ tabs.appendChild(b)});
+show(0);
+
+/* nav: mark the section in view */
+(function(){
+ var links={};[].forEach.call(document.querySelectorAll('nav a[href^="#"]'),function(a){links[a.getAttribute('href').slice(1)]=a});
+ if(!('IntersectionObserver' in window))return;
+ var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(!e.isIntersecting)return;
+  for(var k in links)links[k].removeAttribute('aria-current');
+  if(links[e.target.id])links[e.target.id].setAttribute('aria-current','true');
+ })},{rootMargin:'-40% 0px -55% 0px'});
+ ['about','work','journey','skills','contact'].forEach(function(id){io.observe(document.getElementById(id))});
+})();
+
+/* hero: a small Markov chain. The dot hops between states at random. */
+(function(){
+ var cv=document.getElementById('net');if(!cv||!cv.getContext)return;
+ var ctx=cv.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ var N=[[.58,.16],[.78,.10],[.93,.34],[.70,.44],[.54,.66],[.84,.68],[.96,.88],[.66,.90]];
+ var E=[[0,1],[1,2],[2,3],[3,0],[3,4],[3,5],[4,5],[5,6],[5,7],[4,7],[1,3],[2,5]];
+ var adj=N.map(function(){return[]});E.forEach(function(e,i){adj[e[0]].push([e[1],i]);adj[e[1]].push([e[0],i])});
+ var w=0,h=0,vis=true,raf=0,pulse=N.map(function(){return -9999});
+ var hop={from:3,to:0,edge:3,t0:0,dur:1300};
+ function size(){var r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);w=r.width;h=r.height;cv.width=w*d;cv.height=h*d;ctx.setTransform(d,0,0,d,0,0);if(reduce)draw(0)}
+ function pos(i,t){return[N[i][0]*w+Math.sin(t*.0004+i*1.7)*9,N[i][1]*h+Math.cos(t*.00035+i*2.3)*9]}
+ function ctrl(a,b,idx){var mx=(a[0]+b[0])/2,my=(a[1]+b[1])/2,dx=b[0]-a[0],dy=b[1]-a[1],s=(idx%2?1:-1)*.18;return[mx-dy*s,my+dx*s]}
+ function bez(a,c,b,u){var v=1-u;return[v*v*a[0]+2*v*u*c[0]+u*u*b[0],v*v*a[1]+2*v*u*c[1]+u*u*b[1]]}
+ function ease(x){return .5-.5*Math.cos(Math.PI*x)}
+ function next(now){
+  var o=adj[hop.to],pick=o[Math.floor(Math.random()*o.length)];
+  pulse[hop.to]=now;hop={from:hop.to,to:pick[0],edge:pick[1],t0:now,dur:1000+Math.random()*700};
+ }
+ function draw(now){
+  ctx.clearRect(0,0,w,h);
+  var P2=N.map(function(_,i){return pos(i,now)});
+  var small=w<760;ctx.globalAlpha=small?.55:1;
+  ctx.lineWidth=1.2;ctx.strokeStyle='rgba(169,193,224,.16)';
+  E.forEach(function(e,i){var a=P2[e[0]],b=P2[e[1]],c=ctrl(a,b,i);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.quadraticCurveTo(c[0],c[1],b[0],b[1]);ctx.stroke()});
+  P2.forEach(function(p,i){
+   ctx.beginPath();ctx.arc(p[0],p[1],5,0,7);ctx.fillStyle='rgba(169,193,224,.5)';ctx.fill();
+   var k=(now-pulse[i])/900;if(k>=0&&k<1){ctx.beginPath();ctx.arc(p[0],p[1],5+k*24,0,7);ctx.strokeStyle='rgba(233,161,59,'+(.55*(1-k))+')';ctx.lineWidth=1.5;ctx.stroke()}
+  });
+  var e=E[hop.edge],a=P2[hop.from],b=P2[hop.to],c=ctrl(P2[e[0]],P2[e[1]],hop.edge);
+  var u=reduce?.45:Math.min((now-hop.t0)/hop.dur,1);
+  if(!reduce)for(var s=10;s>=1;s--){var uu=Math.max(0,ease(u)-s*.022),q=bez(P2[e[0]],c,P2[e[1]],e[0]===hop.from?uu:1-uu);ctx.beginPath();ctx.arc(q[0],q[1],4-s*.28,0,7);ctx.fillStyle='rgba(233,161,59,'+(.35-s*.03)+')';ctx.fill()}
+  var f=reduce?.45:ease(u),m=bez(P2[e[0]],c,P2[e[1]],e[0]===hop.from?f:1-f);
+  ctx.beginPath();ctx.arc(m[0],m[1],5.5,0,7);ctx.fillStyle='#e9a13b';ctx.fill();
+  if(!reduce&&u>=1)next(now);
+ }
+ function loop(t){if(!vis)return;draw(t);raf=requestAnimationFrame(loop)}
+ size();addEventListener('resize',size);
+ if(reduce)return;
+ new IntersectionObserver(function(es){vis=es[0].isIntersecting;cancelAnimationFrame(raf);if(vis)raf=requestAnimationFrame(loop)}).observe(cv);
+ document.addEventListener('visibilitychange',function(){cancelAnimationFrame(raf);if(!document.hidden&&vis)raf=requestAnimationFrame(loop)});
+ hop.t0=performance.now();raf=requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
